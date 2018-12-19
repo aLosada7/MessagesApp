@@ -1,2 +1,2 @@
 # MessagesApp
-Angular application for exchanging messages between users
+Angular API REST application for exchanging messages between users
