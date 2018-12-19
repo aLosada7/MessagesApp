@@ -1,0 +1,24 @@
+<div id="widget-canciones">
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Genero</th>
+          <th>Precio</th>
+          <th class="col-md-1"></th>
+        </tr>
+      </thead>
+      <tbody id="tablaCuerpo">
+        <tr *ngFor="let cancion of canciones">
+          <td>{{ cancion.nombre }}</td>
+          <td>{{ cancion.genero }}</td>
+          <td>{{ cancion.precio }}</td>
+          <td>
+            <a routerLink="/cancion/{{ cancion._id }}" > Detalles</a>
+            <br>
+            <a (click)=eliminarCancion(cancion._id) > Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
