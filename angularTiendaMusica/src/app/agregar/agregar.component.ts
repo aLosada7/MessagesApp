@@ -13,6 +13,23 @@ export class AgregarComponent {
   ) { }
 
   cancion = {}; // Importante {} para saber que es objeto
+  usuarios;
+
+  ngOnInit(): void {
+    console.log("onInit - inicio");
+
+    var resObservable = this.cancionesService.getUsuarios();
+    resObservable.subscribe(
+      res => {
+        this.usuarios = res.json();
+        console.log(this.usuarios);
+      },
+      error => {
+        console.log("Error");
+      }
+    );
+    console.log("onInit - final");
+  };
 
   agregarCancion() {
     var resObservable = this.cancionesService.agregarCancion(this.cancion);

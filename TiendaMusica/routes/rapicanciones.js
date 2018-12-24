@@ -14,6 +14,20 @@ module.exports = function(app, gestorBD) {
         });
     });
 
+    app.get("/api/usuarios", function(req, res) {
+        gestorBD.obtenerUsuarios( {} , function(canciones) {
+            if (canciones == null) {
+                res.status(500);
+                res.json({
+                    error : "se ha producido un error"
+                })
+            } else {
+                res.status(200);
+                res.send( JSON.stringify(canciones) );
+            }
+        });
+    });
+
     app.get("/api/cancion/:id", function(req, res) {
         var criterio = { "_id" : gestorBD.mongo.ObjectID(req.params.id)}
 
@@ -71,15 +85,17 @@ module.exports = function(app, gestorBD) {
 
     });
 
-    app.post("/api/cancion", function(req, res) {
-        var cancion = {
-            nombre : req.body.nombre,
-            genero : req.body.genero,
-            precio : req.body.precio,
+    app.post("/api/registrarusuario", function(req, res) {
+      var seguro = app.get("crypto").createHmac('sha256', app.get('clave'))
+          .update(req.body.password).digest('hex');
+
+        var usuario = {
+            email : req.body.email,
+            password : seguro
         }
         // ¿Validar nombre, genero, precio?
 
-        gestorBD.insertarCancion(cancion, function(id){
+        gestorBD.insertarUsuario(usuario, function(id){
             if (id == null) {
                 res.status(500);
                 res.json({
@@ -88,7 +104,7 @@ module.exports = function(app, gestorBD) {
             } else {
                 res.status(201);
                 res.json({
-                    mensaje : "canción insertarda",
+                    mensaje : "usuario insertado",
                     _id : id
                 })
             }
@@ -99,6 +115,7 @@ module.exports = function(app, gestorBD) {
     app.post("/api/autenticar/", function(req, res) {
         var seguro = app.get("crypto").createHmac('sha256', app.get('clave'))
             .update(req.body.password).digest('hex');
+
         var criterio = {
             email : req.body.email,
             password : seguro
@@ -123,5 +140,26 @@ module.exports = function(app, gestorBD) {
 
         });
     });
+
+    app.post("/api/enviarMensaje", function(req,res){
+        console.log(req.body);
+
+        var mensaje=req.body;
+
+        gestorBD.insertarMensaje(mensaje, function(id){
+            if (id == null) {
+                res.status(500);
+                res.json({
+                    error : "se ha producido un error"
+                })
+            } else {
+                res.status(201);
+                res.json({
+                    mensaje : "canción insertarda",
+                    _id : id
+                })
+            }
+        });
+    })
 
 }

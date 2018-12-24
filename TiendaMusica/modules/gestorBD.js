@@ -10,13 +10,13 @@ module.exports = {
 			if (err) {
 				funcionCallback(null);
 			} else {
-				
+
 				var collection = db.collection('canciones');
 				collection.count(function(err, count){
 
 					collection.find(criterio).skip( (pg-1)*4 ).limit( 4 )
 						.toArray(function(err, canciones) {
-							
+
 						if (err) {
 							funcionCallback(null);
 						} else {
@@ -24,7 +24,7 @@ module.exports = {
 						}
 						db.close();
 					});
-					
+
 				});
 			}
 		});
@@ -34,14 +34,14 @@ module.exports = {
 			if (err) {
 				funcionCallback(null);
 			} else {
-				
+
 				var collection = db.collection('usuarios');
 				collection.find(criterioUsuario).toArray(function(err, usuarios) {
 					if (err) {
 						funcionCallback(null);
 					} else {
 						var ArrayIds = usuarios[0].compras;
-					
+
 						if (ArrayIds == null){ // Puede no tener compras
 							funcionCallback( {} );
 							db.close();
@@ -51,7 +51,7 @@ module.exports = {
 						var collection = db.collection('canciones');
 						collection.find({ "_id" : { $in: ArrayIds } })
 							.toArray(function(err, canciones) {
-								
+
 							if (err) {
 								funcionCallback(null);
 							} else {
@@ -70,11 +70,11 @@ module.exports = {
 				funcionCallback(null);
 			} else {
 				var collection = db.collection('usuarios');
-			
-				collection.update(criterioUsuario, 
-						{ $push: { "compras" : cancionId } }  , 
+
+				collection.update(criterioUsuario,
+						{ $push: { "compras" : cancionId } }  ,
 						function(err, result) {
-							
+
 					if (err) {
 						funcionCallback(null);
 					} else {
@@ -124,7 +124,7 @@ module.exports = {
 			if (err) {
 				funcionCallback(null);
 			} else {
-				
+
 				var collection = db.collection('usuarios');
 				collection.find(criterio).toArray(function(err, usuarios) {
 					if (err) {
@@ -159,8 +159,26 @@ module.exports = {
 			if (err) {
 				funcionCallback(null);
 			} else {
-				
+
 				var collection = db.collection('canciones');
+				collection.find(criterio).toArray(function(err, canciones) {
+					if (err) {
+						funcionCallback(null);
+					} else {
+						funcionCallback(canciones);
+					}
+					db.close();
+				});
+			}
+		});
+	},
+	obtenerUsuarios: function(criterio,funcionCallback){
+		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+			if (err) {
+				funcionCallback(null);
+			} else {
+
+				var collection = db.collection('usuarios');
 				collection.find(criterio).toArray(function(err, canciones) {
 					if (err) {
 						funcionCallback(null);
@@ -179,6 +197,23 @@ module.exports = {
 			} else {
 				var collection = db.collection('canciones');
 				collection.insert(cancion, function(err, result) {
+					if (err) {
+						funcionCallback(null);
+					} else {
+						funcionCallback(result.ops[0]._id);
+					}
+					db.close();
+				});
+			}
+		});
+	},
+	insertarMensaje : function(mensaje, funcionCallback) {
+		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+			if (err) {
+				funcionCallback(null);
+			} else {
+				var collection = db.collection('mensajes');
+				collection.insert(mensaje, function(err, result) {
 					if (err) {
 						funcionCallback(null);
 					} else {

@@ -22,6 +22,17 @@ export class CancionesService {
     return resObservable;
   };
 
+  getUsuarios() {
+    console.log(this.token);
+    var url = this.urlBase + "/usuarios";
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    headers.append('token', this.token);
+
+    var resObservable = this.http.get(url, { headers: headers });
+    return resObservable;
+  };
+
   getCancion(id) {
     var url = this.urlBase + "/cancion/" + id;
     var headers = new Headers();
@@ -78,7 +89,7 @@ export class CancionesService {
   };
 
   identificarUsuarioPro(email, password) {
-    console.log("CancionesService e:" + email + " p:" + password);
+    console.log("MessagesService e:" + email + " p:" + password);
 
     var url = this.urlBase + "/autenticar";
     var body = { "email": email, "password": password };
@@ -97,5 +108,28 @@ export class CancionesService {
         }
       );
   };
+
+  registrarUsuarioPro(usuario){
+
+    var url = this.urlBase + "/registrarUsuario";
+    var body = usuario; // Suponemos que esta en formato JSON
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+
+    var resObservable = this.http.post(url, body, { headers: headers });
+
+    return resObservable;
+  }
+
+  enviarMensaje(contenido){
+    var url = this.urlBase + "/enviarMensaje";
+    var body = contenido; // Suponemos que esta en formato JSON
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+
+    var resObservable = this.http.post(url, body, { headers: headers });
+
+    return resObservable;
+  }
 
 }

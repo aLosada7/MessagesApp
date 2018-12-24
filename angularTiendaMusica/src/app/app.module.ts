@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { CancionesComponent } from './canciones/canciones.component';
 import { DetallesComponent } from './detalles/detalles.component';
 import { AgregarComponent } from './agregar/agregar.component';
+import { RegistroComponent } from './registro/registro.component';
 
 //Services
 import { CancionesService } from './services/canciones.service';
@@ -20,7 +21,8 @@ import { CancionesService } from './services/canciones.service';
     LoginComponent,
     CancionesComponent,
     DetallesComponent,
-    AgregarComponent
+    AgregarComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +30,9 @@ import { CancionesService } from './services/canciones.service';
     RouterModule.forRoot([
      { path: '', component: LoginComponent },
      { path: 'login', component: LoginComponent },
-     { path: 'canciones', component: CancionesComponent },
-     { path: 'cancion/:id', component: DetallesComponent },
-     { path: 'agregar', component: AgregarComponent }
+     { path: 'mensajes/:email', component: CancionesComponent },
+     { path: 'agregar', component: AgregarComponent },
+     { path: 'registro', component: RegistroComponent }
     ]),
     HttpModule
   ],

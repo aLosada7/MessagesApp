@@ -36,12 +36,16 @@ export class LoginComponent {
     promesa.then(
       retorno => {
         if (retorno) {
-          this.router.navigate(['/canciones']);
+          this.router.navigate(['/mensajes/'+this.email]);
           console.log("Login Promesa- Ir a la lista de canciones");
         } else {
           console.log("Login Promesa - Mensaje de error");
         }
       }
     );
+  }
+
+  registrarUsuario(){
+    this.router.navigate(['/registro']);
   }
 }
