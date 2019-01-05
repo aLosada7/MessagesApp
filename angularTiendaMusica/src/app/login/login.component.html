@@ -1,18 +1,17 @@
 <div id="widget-login">
+  <h1>Login</h1>
   <div class="form-group">
     <label for="email">Email address</label>
     <input [(ngModel)]="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   <div class="form-group">
-    <label for="password">Email address</label>
+    <label for="password">Password</label>
     <input [(ngModel)]="password" type="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter password">
   </div><br>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
       <button type="button" (click)="identificarUsuarioPro()" class="btn btn-primary">
-        Acceder
+        Sign In
       </button>
-    </div>
   </div> <br>
-  <p>Si no tienes una cuenta, no esperes más y <a (click)="registrarUsuario()">registrate ya.</a></p>
+  <button type="button" class="btn btn-primary" (click)="registrarUsuario()">Sign Up Now</button>
 </div>

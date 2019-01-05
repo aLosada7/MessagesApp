@@ -28,6 +28,23 @@ module.exports = function(app, gestorBD) {
         });
     });
 
+    app.get("/api/mensajes/:iniciador/:receptor", function(req, res) {
+        var criterio = { "iniciador" : req.params.iniciador,
+                        "receptor" : req.params.receptor }
+
+        gestorBD.obtenerMensajes(criterio,function(mensajes){
+            if ( mensajes == null ){
+                res.status(500);
+                res.json({
+                    error : "se ha producido un error"
+                })
+            } else {
+                res.status(200);
+                res.send( JSON.stringify(mensajes) );
+            }
+        });
+    });
+
     app.get("/api/cancion/:id", function(req, res) {
         var criterio = { "_id" : gestorBD.mongo.ObjectID(req.params.id)}
 

@@ -32,6 +32,17 @@ export class CancionesService {
     var resObservable = this.http.get(url, { headers: headers });
     return resObservable;
   };
+//consulta get mensajes
+  getMensajes(iniciador, receptor) {
+    console.log(this.token);
+    var url = this.urlBase + "/mensajes/" + iniciador + "/" + receptor;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    headers.append('token', this.token);
+
+    var resObservable = this.http.get(url, { headers: headers });
+    return resObservable;
+  };
 
   getCancion(id) {
     var url = this.urlBase + "/cancion/" + id;

@@ -21,7 +21,7 @@ export class RegistroComponent {
     resObservable.subscribe(
       res => {
         console.log("AgregarComponent - Agregado Correctamente");
-        this.router.navigate(['/']);
+        this.router.navigate(['/mensajes/'+this.usuario.email]);
       },
       error => {
         console.log("AgregarComponent - Error al agregar");
