@@ -8,20 +8,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
-import { DetallesComponent } from './detalles/detalles.component';
-import { AgregarComponent } from './agregar/agregar.component';
 import { RegistroComponent } from './registro/registro.component';
 
 //Services
-import { CancionesService } from './services/canciones.service';
+import { MensajesService } from './services/mensajes.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MensajesComponent,
-    DetallesComponent,
-    AgregarComponent,
     RegistroComponent
   ],
   imports: [
@@ -31,12 +27,11 @@ import { CancionesService } from './services/canciones.service';
      { path: '', component: LoginComponent },
      { path: 'login', component: LoginComponent },
      { path: 'mensajes/:email', component: MensajesComponent },
-     { path: 'agregar', component: AgregarComponent },
      { path: 'registro', component: RegistroComponent }
     ]),
     HttpModule
   ],
-  providers: [CancionesService],
+  providers: [MensajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

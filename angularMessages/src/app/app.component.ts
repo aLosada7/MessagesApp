@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CancionesService } from './services/canciones.service';
+import { MensajesService } from './services/mensajes.service';
 // Aqui no lleva ../ no está en una carpeta.
 @Component({
  selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
  title = 'Angular Tienda Música';
 
  constructor(
- private cancionesService: CancionesService
+ private mensajesService: MensajesService
  ) { }
 
 }

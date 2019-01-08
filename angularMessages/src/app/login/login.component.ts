@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CancionesService } from '../services/canciones.service';
+import { MensajesService } from '../services/mensajes.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   constructor(
-    private cancionesService: CancionesService,
+    private mensajesService: MensajesService,
     private router: Router
   ) { }
 
@@ -17,7 +17,7 @@ export class LoginComponent {
   password: string;
 
   identificarUsuario(): void {
-    var resObservable = this.cancionesService.identificarUsuario(this.email, this.password);
+    var resObservable = this.mensajesService.identificarUsuario(this.email, this.password);
 
     resObservable.subscribe(
       res => {
@@ -31,7 +31,7 @@ export class LoginComponent {
   };
 
   identificarUsuarioPro() {
-    var promesa = this.cancionesService.identificarUsuarioPro(this.email, this.password);
+    var promesa = this.mensajesService.identificarUsuarioPro(this.email, this.password);
 
     promesa.then(
       retorno => {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CancionesService } from '../services/canciones.service';
+import { MensajesService } from '../services/mensajes.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 export class RegistroComponent {
 
   constructor(
-    private cancionesService: CancionesService,
+    private mensajesService: MensajesService,
     private router: Router
   ) { }
 
   usuario = {}; // Importante {} para saber que es objeto
 
   registrarUsuarioPro() {
-    var resObservable = this.cancionesService.registrarUsuarioPro(this.usuario);
+    var resObservable = this.mensajesService.registrarUsuarioPro(this.usuario);
 
     resObservable.subscribe(
       res => {
         console.log("AgregarComponent - Agregado Correctamente");
-        this.router.navigate(['/mensajes/'+this.usuario.email]);
+        this.router.navigate(['/login']);
       },
       error => {
         console.log("AgregarComponent - Error al agregar");

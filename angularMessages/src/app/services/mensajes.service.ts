@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 //import { toPromise } from 'rxjs/operators/toPromise';
 
 @Injectable()
-export class CancionesService {
+export class MensajesService {
   constructor(
     private http: Http,
   ) { }
@@ -11,16 +11,6 @@ export class CancionesService {
   token;
   urlBase = "http://localhost:8081/api";
 
-  getCanciones() {
-    console.log(this.token);
-    var url = this.urlBase + "/cancion";
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/JSON');
-    headers.append('token', this.token);
-
-    var resObservable = this.http.get(url, { headers: headers });
-    return resObservable;
-  };
 
   getUsuarios() {
     console.log(this.token);
@@ -36,6 +26,17 @@ export class CancionesService {
   getMensajes(iniciador, receptor) {
     console.log(this.token);
     var url = this.urlBase + "/mensajes/" + iniciador + "/" + receptor;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    headers.append('token', this.token);
+
+    var resObservable = this.http.get(url, { headers: headers });
+    return resObservable;
+  };
+
+  getAllUserMessages(user) {
+    console.log(this.token);
+    var url = this.urlBase + "/mensajesUser/" + user;
     var headers = new Headers();
     headers.append('Content-Type', 'application/JSON');
     headers.append('token', this.token);
@@ -143,4 +144,15 @@ export class CancionesService {
     return resObservable;
   }
 
+  marcarLeido(message) {
+    console.log(message._id)
+    var url = this.urlBase + "/marcarLeido/" + message._id;
+    var body = message; // Suponemos que esta en formato JSON
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+
+    var resObservable = this.http.post(url, body, { headers: headers });
+
+    return resObservable;
+  }
 }

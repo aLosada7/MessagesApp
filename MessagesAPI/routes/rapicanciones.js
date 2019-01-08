@@ -28,6 +28,75 @@ module.exports = function(app, gestorBD) {
         });
     });
 
+    app.get("/api/mensajesUser/:user", function(req, res) {
+        var criterio = { "iniciador" : req.params.user}
+        var allMessages = [];
+
+        gestorBD.obtenerAllMensajes(criterio,function(mensajes){
+            if ( mensajes == null ){
+                res.status(500);
+                res.json({
+                    error : "se ha producido un error"
+                })
+            } else {
+                res.status(200);
+                for(message of mensajes){
+                    allMessages.push(message);
+                }
+
+            }
+        });
+
+        criterio = { "receptor" : req.params.user}
+
+        gestorBD.obtenerAllMensajes(criterio,function(mensajes){
+            if ( mensajes == null ){
+                res.status(500);
+                res.json({
+                    error : "se ha producido un error"
+                })
+            } else {
+                res.status(200);
+                for(message of mensajes){
+                    allMessages.push(message);
+                }
+                res.send( JSON.stringify(allMessages) );
+            }
+        });
+    });
+
+    app.post('/api/marcarLeido/:id', function (req, res) {
+
+        var id = req.params.id;
+        var criterio = { "_id" : gestorBD.mongo.ObjectID(id)  };
+
+        console.log(req.body);
+
+        var mensaje={
+            'iniciador': req.body.iniciador,
+            'receptor': req.body.receptor,
+            'envia': req.body.envia,
+            'messsage': req.body.message,
+            'leido': 'si'
+        }
+
+        gestorBD.modificarMensaje(criterio, mensaje, function(result) {
+            if (result == null) {
+                res.send("Error al modificar ");
+            } else {
+                if( result == null){
+                    res.status(500);
+                    res.json({
+                        error : "se ha producido un error"
+                    })
+                } else {
+                    res.status(200);
+                }
+            }
+        });
+
+    })
+
     app.get("/api/mensajes/:iniciador/:receptor", function(req, res) {
         var criterio = { "iniciador" : req.params.iniciador,
                         "receptor" : req.params.receptor }

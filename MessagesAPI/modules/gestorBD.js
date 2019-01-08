@@ -5,86 +5,6 @@ module.exports = {
 		this.mongo = mongo;
 		this.app = app;
 	},
-	obtenerCancionesPg : function(criterio,pg,funcionCallback){
-		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
-			if (err) {
-				funcionCallback(null);
-			} else {
-
-				var collection = db.collection('canciones');
-				collection.count(function(err, count){
-
-					collection.find(criterio).skip( (pg-1)*4 ).limit( 4 )
-						.toArray(function(err, canciones) {
-
-						if (err) {
-							funcionCallback(null);
-						} else {
-							funcionCallback(canciones, count);
-						}
-						db.close();
-					});
-
-				});
-			}
-		});
-	},
-	usuarioCancionesCompradas: function(criterioUsuario, funcionCallback) {
-		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
-			if (err) {
-				funcionCallback(null);
-			} else {
-
-				var collection = db.collection('usuarios');
-				collection.find(criterioUsuario).toArray(function(err, usuarios) {
-					if (err) {
-						funcionCallback(null);
-					} else {
-						var ArrayIds = usuarios[0].compras;
-
-						if (ArrayIds == null){ // Puede no tener compras
-							funcionCallback( {} );
-							db.close();
-							return;
-						}
-
-						var collection = db.collection('canciones');
-						collection.find({ "_id" : { $in: ArrayIds } })
-							.toArray(function(err, canciones) {
-
-							if (err) {
-								funcionCallback(null);
-							} else {
-								funcionCallback(canciones);
-							}
-							db.close();
-						});
-					}
-				});
-			}
-		});
-	},
-	usuarioComprarCancion: function(criterioUsuario, cancionId, funcionCallback) {
-		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
-			if (err) {
-				funcionCallback(null);
-			} else {
-				var collection = db.collection('usuarios');
-
-				collection.update(criterioUsuario,
-						{ $push: { "compras" : cancionId } }  ,
-						function(err, result) {
-
-					if (err) {
-						funcionCallback(null);
-					} else {
-						funcionCallback(result);
-					}
-					db.close();
-				});
-			}
-		});
-	},
 	eliminarCancion : function(criterio, funcionCallback) {
 		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
 			if (err) {
@@ -92,23 +12,6 @@ module.exports = {
 			} else {
 				var collection = db.collection('canciones');
 				collection.remove(criterio, function(err, result) {
-					if (err) {
-						funcionCallback(null);
-					} else {
-						funcionCallback(result);
-					}
-					db.close();
-				});
-			}
-		});
-	},
-	modificarCancion : function(criterio, cancion, funcionCallback) {
-		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
-			if (err) {
-				funcionCallback(null);
-			} else {
-				var collection = db.collection('canciones');
-				collection.update(criterio, {$set: cancion}, function(err, result) {
 					if (err) {
 						funcionCallback(null);
 					} else {
@@ -172,6 +75,41 @@ module.exports = {
 			}
 		});
 	},
+    obtenerAllMensajes : function(criterio,funcionCallback){
+        this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+            if (err) {
+                funcionCallback(null);
+            } else {
+
+                var collection = db.collection('mensajes');
+                collection.find(criterio).toArray(function(err, canciones) {
+                    if (err) {
+                        funcionCallback(null);
+                    } else {
+                        funcionCallback(canciones);
+                    }
+                    db.close();
+                });
+            }
+        });
+    },
+    modificarMensaje : function(criterio, mensaje, funcionCallback) {
+        this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
+            if (err) {
+                funcionCallback(null);
+            } else {
+                var collection = db.collection('mensajes');
+                collection.update(criterio, {$set: mensaje}, function(err, result) {
+                    if (err) {
+                        funcionCallback(null);
+                    } else {
+                        funcionCallback(result);
+                    }
+                    db.close();
+                });
+            }
+        });
+    },
     obtenerMensajes : function(criterio,funcionCallback){
         this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
             if (err) {
@@ -190,6 +128,7 @@ module.exports = {
             }
         });
     },
+
 	obtenerUsuarios: function(criterio,funcionCallback){
 		this.mongo.MongoClient.connect(this.app.get('db'), function(err, db) {
 			if (err) {
