@@ -8,8 +8,8 @@
       </div>
       <hr>
       <p style="text-align: center;">With messages:</p>
-      <ul *ngFor="let usuario of usuariosContacto" class="list-group" (click)="onItemClick($event, usuario)">
-        <li class="list-group-item">{{ usuario }}</li>
+      <ul *ngFor="let usuario of usuariosHablando" class="list-group" (click)="onItemClick($event, usuario.email)">
+        <li class="list-group-item">{{ usuario.email }} ({{usuario.numNoLeidos}})</li>
       </ul>
       <hr>
       <p style="text-align: center;">All the app users:</p>

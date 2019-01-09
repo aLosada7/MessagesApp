@@ -13,6 +13,7 @@ export class MensajesComponent implements OnInit {
     private router: Router
   ) { }
 
+  usuariosHablando = [];
   usuariosContacto = [];
   usuarios = [];
   allMessagesUser;
@@ -33,7 +34,7 @@ export class MensajesComponent implements OnInit {
       this.contenido.envia=email;
 
       console.log("onInit - inicio");
-//Todos los usuarios de la aplicación
+      //Todos los usuarios de la aplicación
       var resObservable = this.mensajesService.getUsuarios();
       resObservable.subscribe(
         res => {
@@ -58,13 +59,12 @@ export class MensajesComponent implements OnInit {
     resObservable.subscribe(
       res => {
         console.log(res);
-        if (res._body !== "[]") {
+        if ((<any>res)._body !== "[]") {
           this.allMessagesUser = res.json();
           console.log(this.allMessagesUser);
           var message;
           for (var _i = 0; _i < this.allMessagesUser.length; _i++) {
             message = this.allMessagesUser[_i];
-            console.log(message);
               if (this.usuariosContacto.indexOf(message.receptor) == -1 && message.receptor != this.contenido.envia){
                 this.usuariosContacto.push(message.receptor);
               }else if (this.usuariosContacto.indexOf(message.iniciador) == -1 && message.iniciador != this.contenido.envia) {
@@ -72,6 +72,21 @@ export class MensajesComponent implements OnInit {
               }
           }
           console.log(this.usuariosContacto);
+          var cont=0;
+          for(var _i = 0; _i < this.usuariosContacto.length; _i++){
+            var usuario=this.usuariosContacto[_i];
+            console.log(usuario);
+            cont=0;
+            for(var _j = 0; _j < this.allMessagesUser.length; _j++){
+              message = this.allMessagesUser[_j];
+              console.log(message.receptor);
+              if((usuario == message.iniciador || usuario==message.receptor) && message.envia == usuario && message.leido == "no"){
+                cont++;
+              }
+            }
+            this.usuariosHablando.push({'email': usuario, 'numNoLeidos': cont});
+          }
+          console.log(this.usuariosHablando);
         }
       },
       error => {
@@ -110,7 +125,7 @@ export class MensajesComponent implements OnInit {
     var resObservable = this.mensajesService.getMensajes(this.contenido.envia, this.destinatario);
     resObservable.subscribe(
       res => {
-        if(res._body != "[]") {
+        if((<any>res)._body != "[]") {
           this.mensajes = res.json();
           //console.log(this.mensajes);
           this.contenido.iniciador = this.contenido.envia;
@@ -135,7 +150,7 @@ export class MensajesComponent implements OnInit {
           resObservable.subscribe(
             res => {
               console.log(res);
-              if(res._body.length > 0) {
+              if((<any>res)._body.length > 0) {
                 this.mensajes = res.json();
                 console.log(this.mensajes);
                 this.contenido.iniciador = this.destinatario;
@@ -155,6 +170,7 @@ export class MensajesComponent implements OnInit {
                     );
                   }
                 }
+              }
             },
             error => {
               console.log("Error");

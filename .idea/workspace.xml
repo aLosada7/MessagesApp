@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="051b6144-e009-4dd1-9781-fb6aa681f400" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TiendaMusica/modules/gestorBD.js" beforeDir="false" afterPath="$PROJECT_DIR$/TiendaMusica/modules/gestorBD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TiendaMusica/routes/rapicanciones.js" beforeDir="false" afterPath="$PROJECT_DIR$/TiendaMusica/routes/rapicanciones.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/agregar/agregar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/agregar/agregar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/detalles/detalles.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/detalles/detalles.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angularTiendaMusica/src/app/services/canciones.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularTiendaMusica/src/app/services/mensajes.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,40 +18,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.ts">
+        <entry file="file://$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="110" selection-start-line="4" selection-start-column="110" selection-end-line="4" selection-end-column="110" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="149" column="67" selection-start-line="149" selection-start-column="67" selection-end-line="149" selection-end-column="67" />
+            <state relative-caret-position="2280">
+              <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -72,67 +29,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TiendaMusica/routes/rapicanciones.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/services/mensajes.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
+            <state relative-caret-position="30">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/login/login.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -172,6 +75,8 @@
         <option value="$PROJECT_DIR$/angularTiendaMusica/src/app/services/mensajes.service.ts" />
         <option value="$PROJECT_DIR$/TiendaMusica/routes/rapicanciones.js" />
         <option value="$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts" />
+        <option value="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.ts" />
+        <option value="$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.html" />
       </list>
     </option>
   </component>
@@ -194,69 +99,28 @@
             <path>
               <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
+              <item name="angularMessages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
+              <item name="angularMessages" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
+              <item name="angularMessages" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
+              <item name="angularMessages" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="mensajes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="registro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="angularTiendaMusica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="TiendaMusica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="TiendaMusica" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MessagesApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MessagesApp" type="462c0819:PsiDirectoryNode" />
-              <item name="TiendaMusica" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,7 +137,7 @@
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/angularTiendaMusica/node_modules/tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/angularTiendaMusica/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/angularMessages/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -303,11 +167,12 @@
       <workItem from="1546876838887" duration="177000" />
       <workItem from="1546945336898" duration="9110000" />
       <workItem from="1546962515146" duration="863000" />
+      <workItem from="1547029827985" duration="2030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14779000" />
+    <option name="totallyTimeSpent" value="16809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -379,16 +244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -450,6 +305,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="149" column="67" selection-start-line="149" selection-start-column="67" selection-end-line="149" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/registro/registro.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -466,12 +341,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angularTiendaMusica/src/app/mensajes/mensajes.component.ts">
+    <entry file="file://$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="149" column="67" selection-start-line="149" selection-start-column="67" selection-end-line="149" selection-end-column="67" />
+        <state relative-caret-position="2280">
+          <caret line="152" column="33" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="33" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularMessages/src/app/mensajes/mensajes.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
