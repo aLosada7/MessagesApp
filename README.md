@@ -1,8 +1,8 @@
-# Diseño y programación de lenguajes de usuario:
+# Messages Exchange App:
 
-Se han desarrollado todos los requisitos solucionados tanto en la parte de Angular como en la de Node además de los dos pertenecientes a la ampliación de funcionalidad.
+An Angular application for messages exchange between registered users using NodeJS for the API and Angular as the developer framework. This application allows the login and register of users and the communication between then through messages.
 
-## Usuarios para pruebas:
+## Test users:
 
 Usuario: cliente1@na.com
 Contraseña: na
@@ -13,13 +13,14 @@ Contraseña: lck
 Usuario: cliente3@eu.com
 Contraseña: eu
 
-# MessagesApp
-Angular API REST application for exchanging messages between users
+## Usage
 
-## Execution
-
-REST API: On folder MessagesAPI
+Run REST API: On the folder MessagesAPI
+```
 node app.js
+```
 
-Angular: On folder angularMessages
+Run Angular application: On the folder angularMessages
+```
 ng serve --open
+```
