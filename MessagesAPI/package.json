@@ -22,7 +22,7 @@
     "express-fileupload": "^0.2.0",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.4.0",
-    "mongodb": "^2.2.31",
+    "mongodb": "^3.1.13",
     "swig": "^1.4.2"
   }
 }
